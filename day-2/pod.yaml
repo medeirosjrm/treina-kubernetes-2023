@@ -1,19 +1,14 @@
 apiVersion: v1
 kind: Pod
-metadata:
-  labels:
-    run: girus
-    service: webserver
+metadata:                   # informações relacionada ao Pod
+  labels:                   # etiqueta com uma descrição 
+    run: girus            # obrigatorio nome do Pod
+    service: webserver      # nome que ira aparecer na pesquisa do Label
   name: girus
-spec:
+spec:                       # especificações
   containers:
   - image: nginx
-    name: nginx
-    resources: {}
-  - image: busybox
-    name:  busybox
-    args: 
-    - sleep
-    - "600"  
-  dnsPolicy: ClusterFirst
-  restartPolicy: Always
+    name: girus
+    resources: {}           # Recursos podemos utilizar limitações de CPU, Memoria e IO 
+  dnsPolicy: ClusterFirst   # Dns procura resolver dentro do cluster e depois resolver por fora do cluster 
+  restartPolicy: Always     # Se acontercer algo com o Pod ele faz o restart sempre

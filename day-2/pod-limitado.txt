@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:                   # informações relacionada ao Pod
+  labels:                   # etiqueta com uma descrição 
+    run: giropops            # obrigatorio nome do Pod
+  name: giropops
+spec:                       # especificações
+  containers:
+  - image: ubuntu
+    name: ubuntu
+    args:
+    - sleep
+    - "1800"
+    resources:                    # Recursos podemos utilizar limitações de CPU, Memoria e IO 
+      limits:
+        CPU: "0.5"                # limite maximo de 50% de CPU de 1 CPU
+        memory: "128Mi"           # Limite maximo de memoria 128MB (Mi)
+      requests:                     
+        cpu: "0.3"                # request garante quando subir o container ele tenho no minimo 30% de CPU
+        memory: "64Mi"            # request garante quando subir o container ele tenho no minimo 64MB de Memoria (Mi)
+  dnsPolicy: ClusterFirst   # Dns procura resolver dentro do cluster e depois resolver por fora do cluster 
+  restartPolicy: Always     # Se acontercer algo com o Pod ele faz o restart sempre
