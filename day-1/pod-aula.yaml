@@ -13,10 +13,10 @@ spec:
     - containerPort: 8081
     resources: 
       limits: 
-        memory: "250Mi"
-        cpu: "0.5"
+        memory: "64Mi"
+        cpu: "0.5m"
     requests:
        memory: "128Mi"
-       cpu: "0,3"
+       cpu: "0,3m"
     dnsPolicy: ClusterFirst
     restartPolicy: Always

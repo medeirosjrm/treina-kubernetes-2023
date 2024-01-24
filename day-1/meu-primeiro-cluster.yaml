@@ -13,10 +13,10 @@ spec:
     - containerPort: 80
     resources: 
       limits: 
-        memory:
+        memory: "128Mi"
         cpu: "0.5"
     requests:
-        memory: "4400MB"
-        cpu: "0,3"
+        memory: "4400Mi"
+        cpu: "0.3"
   dnsPolicy: ClusterSecond
   restartPolicy: Always
