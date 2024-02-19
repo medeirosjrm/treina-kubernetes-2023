@@ -1,0 +1,10 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: witty
+provisioner: kubernets.io/vsphere-volume
+reclaimPolicy: Retain
+volumeBindingMode: WaitForFirstConsumer
+parameters:
+  diskformat: thin
+    datastore: DataFileStorage
